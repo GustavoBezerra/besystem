@@ -14,6 +14,11 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    
+    <welcome-file-list>
+        <welcome-file></welcome-file>
+            
+    </welcome-file-list>
 
     <servlet-mapping><!-- Mapeia o Servlet -->
         <servlet-name>Spring-Servlet</servlet-name>

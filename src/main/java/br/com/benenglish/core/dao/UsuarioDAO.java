@@ -16,9 +16,8 @@ import javax.persistence.criteria.Root;
  * @author Gustavo de Souza Bezerra <gustavo.bezerra@hotmail.com>
  * @date 25/03/2017
  */
-public class UsuarioDAO implements IDAO {
+public class UsuarioDAO {
 
-    @Override
     public void salvar(EntidadeDominio entidade) {
         EntityManager manager = new JPAUtil().getEntityManager();
 
@@ -33,12 +32,10 @@ public class UsuarioDAO implements IDAO {
         manager.close();
     }
 
-    @Override
     public void alterar(EntidadeDominio entidade) {
         salvar(entidade);
     }
 
-    @Override
     public void excluir(EntidadeDominio entidade) {
         EntityManager manager = new JPAUtil().getEntityManager();
 
@@ -53,7 +50,7 @@ public class UsuarioDAO implements IDAO {
         manager.close();
     }
 
-    @Override
+    
     public List<Usuario> consultar(EntidadeDominio entidade) {
         EntityManager manager = new JPAUtil().getEntityManager();
         String jpql = "select u from Usuario u";
@@ -62,7 +59,7 @@ public class UsuarioDAO implements IDAO {
         return query.getResultList();
     }
 
-    @Override
+    
     public EntidadeDominio visualizar(EntidadeDominio entidade) {
 
         Usuario usuario = (Usuario) entidade;
