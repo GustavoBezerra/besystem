@@ -13,25 +13,34 @@ import javax.persistence.EntityManager;
 public class PopularPerfil {
 
     public static void main(String[] args) {
-        EntityManager manager = new JPAUtil().getEntityManager();
+        
         
         Usuario user = new Usuario();
         List<Perfil> perfis = new ArrayList<>();
         
-        perfis.add(Perfil.ALUNO);
+        perfis.add(Perfil.TRADUTOR_NV_3);
         
         user.setPerfil(perfis);
-        user.setBecoins(50000);
-        user.setLogin("gbezerra");
+        user.setBecoins(10000);
+        user.setLogin("maria");
         user.setSenha("123");
+        
+        salvar(user);
 
+        
+    }
+    
+    public static void salvar(Object entity){
+        EntityManager manager = new JPAUtil().getEntityManager();
+        
         manager.getTransaction().begin();
         
-        manager.persist(user);
+        manager.persist(entity);
 
         manager.getTransaction().commit();
 
         manager.close();
     }
+    
 
 }

@@ -20,7 +20,7 @@ public class UsuarioController {
     
     @RequestMapping("/")
     public String index(){
-        return "home/starter";
+        return "home/index";
     }
     
 
